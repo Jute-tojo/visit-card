@@ -1,0 +1,156 @@
+
+.container  {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 400px;
+  width: 700px;
+  background: #d54858;
+  overflow: hidden;
+  border-radius: 20px;
+  //cursor: pointer;
+  box-shadow: 0 0 20px 8px rgb(39, 39, 39);
+  .background-arround{
+    background-color: #2c2c2c;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    height: 100%;
+    width: 70px;
+    border-radius: 150px 0px 0px 150px;
+    div{
+      float: right;
+      margin-left: 15px;
+      margin-top: 80px;
+      a{
+        background-color: #d54858;
+        margin-bottom: 30px;
+        color: #2c2c2c;
+        box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+      }
+      .test:hover i{
+        transition: 0.7s;
+        -webkit-transform: rotate(180deg);
+      }
+      .test:not(:hover) i{
+        transition: 1s;
+      }
+    }
+  }
+  .content {
+    position: absolute;
+    top: 45%;
+    transform: translatey(-50%);
+    text-align: justify;
+    color: white;
+    padding: 40px;
+    width: 100%;
+  }
+}
+
+
+
+h1 {
+  font-weight: 900;
+  text-align: center;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+.flap {
+  width: 100%;
+  height: 100%;
+}
+
+.flap::before {
+  position: absolute;
+  content: "";
+  height: 100%;
+  left: 0;
+  width: 50%;
+  background:  url("../assets/couverture.jpg") #d54858;
+  background-position: -15px;
+  background-repeat: no-repeat;
+  transition: 1s;
+  z-index: 100;
+}
+
+.flap::after {
+  position: absolute;
+  content: "";
+  height: 100%;
+  width: 50%;
+  right: 0;
+  background:  url("../assets/couverture.jpg") #d54858;
+  background-position: -365px;
+  background-repeat: no-repeat;
+  transition: 1s;
+  z-index: 100;
+}
+
+.open .flap::after {
+  transform: translatex(350px);
+}
+
+.open .flap::before{
+  transform: translatex(-350px);
+}
+
+//les MEDIA QUERY
+@media screen and (max-width: 780px) {
+  .container{
+    max-width: 100%!important;
+    border-radius: 0px;
+  }
+}
+
+@media screen and (max-width: 700px) {
+  .flap::after, .flap::before{
+    background: #d54858;
+  }
+}
+@media screen and (max-width: 650px) {
+  .container{
+    height: 500px!important;
+    .content{
+      top: 50%!important;
+    }
+    .background-arround div{
+      margin-top: 120px;
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .container{
+    height: 500px!important;
+    .content{
+      top: 50%!important;
+    }
+    .background-arround {
+      background-color: #d54858;
+      top: 27%!important;
+      div{
+        margin-top: 120px;
+
+      }
+    }
+  }
+}
+@media screen and (max-width: 450px) {
+  .content{
+    padding: 20px!important;
+  }
+  .background-arround{
+    div{
+      margin-top: 160px!important;
+      a{
+        background-color: #2b2a2b!important;
+        color: #d54858!important;
+        margin-bottom: 10px!important;
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+header{
+  b{
+    color: #2c2c2c;
+  }
+  .about{
+    margin-top: 50px;
+    color: #f3f3f3;
+    .espace{
+      margin-top: 25px;
+      margin-bottom: 15px;
+    }
+    i{
+      font-size: 20px;
+      margin-top: 6px;
+      margin-bottom: 16px;
+    }
+    .fa-map-marker-alt{
+      margin-right: 20px;
+    }
+    .fa-envelope, .fa-phone{
+      margin-right: 20px;
+    }
+    span{
+      float: right;
+    }
+  }
+  .qr-code{
+    position: absolute;
+    bottom: 25%;
+    right: 150px;
+    img{
+      width: 120px;
+    }
+  }
+  .qr-code:hover{
+    bottom: 20%;
+    right: 130px;
+    img{
+      width: 150px;
+    }
+  }
+}
+
+//ANIMATION CSS
+.move{
+  -webkit-animation: moveText 3s infinite;
+  animation: moveText 3s 2;
+  position: relative;
+}
+@-webkit-keyframes moveText{
+    0% {
+      left: 0px;
+    }
+    50% {
+      left: 80px;
+    }
+    100% {
+      left: 0px;
+    }
+}
+@keyframes moveText{
+  0% {
+    left: 0px;
+  }
+  50% {
+    left: 80px;
+  }
+  100% {
+    left: 0px;
+  }
+}
+
+//MEDIA QUERY
+@media screen and (max-width: 650px) {
+  .qr-code{
+    position: relative!important;
+    bottom: 25%;
+    right: 0px!important;
+  }
+}
+
+@media screen and (max-width: 450px) {
+  .qr-code{
+    margin-top: 20px;
+    img{
+      width: 80px!important;
+    }
+  }
+}

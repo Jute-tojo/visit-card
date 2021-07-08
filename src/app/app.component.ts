@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'visit-card';
+  title = 'Carte de visite';
+  test = false;
+
+  constructor() {
+    setTimeout(
+      ()=> {
+        this.test = true;
+      }, 1500
+    );
+
+  }
 }
